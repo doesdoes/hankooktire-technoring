@@ -47,13 +47,11 @@ export class Webgl{
     this.controls = new OrbitControls( this.camera, this.renderer.domElement )
     this.controls.enabled = true
     this.controls.enableRotate = true
-    this.controls.enablePan = false
+    this.controls.enablePan = true
     this.controls.enableDamping = true
     this.controls.minDistance = 1
     this.controls.maxDistance = 50
-    this.controls.minAzimuthAngle = THREE.MathUtils.degToRad(-65)
-    this.controls.maxAzimuthAngle = THREE.MathUtils.degToRad(65)
-    this.controls.minPolarAngle = THREE.MathUtils.degToRad(60)
+    this.controls.minPolarAngle = THREE.MathUtils.degToRad(40)
     this.controls.maxPolarAngle = THREE.MathUtils.degToRad(80)
 
     //listeners

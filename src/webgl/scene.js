@@ -8,8 +8,11 @@ export function loadStage( sceneName ) {
   switch (sceneName) {
     case 'main':
       const directionalLight = new THREE.DirectionalLight( 0xffffff, 1.0 )
-      directionalLight.position.set(5, 6, 4)
-      STATE.WEBGL.scene.add( directionalLight )
+      directionalLight.position.set(-5, 6, 4)
+      STATE.WEBGL.camera.add( directionalLight )
+
+      const hemisphereLight = new THREE.HemisphereLight( 0xffffff, 0x787878, 0.4 )
+      STATE.WEBGL.scene.add( hemisphereLight );
 
       const SCENE_MESH = ASSETS.MAIN.MODEL_FILES.find( obj => { return obj.name === "scene" } )
       const SCENE_OBJECT = new StageObject({

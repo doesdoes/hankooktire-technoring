@@ -14,6 +14,7 @@ export class StageObject{
       map: {},
       emissiveMap: {},
       alphaMap: {},
+      aoMap: {},
       metalnessMap: {},
       specularMap: {},
       normalMap: {},
@@ -90,6 +91,16 @@ export class StageObject{
 
                 if(this.definition.MATERIALS[child.material.name].flipY  != undefined) mapText.flipY = this.definition.MATERIALS[child.material.name].flipY
 
+                // tiling
+                if(mapKey == "map" || mapKey == "alphaMap") {                  
+                  let tiling = (mapKey == "map") ? this.definition.MATERIALS[child.material.name].mapTiling : this.definition.MATERIALS[child.material.name].alphaMapTiling
+                  if(tiling != undefined) {
+                    mapText.wrapS = THREE.RepeatWrapping
+                    mapText.wrapT = THREE.RepeatWrapping
+                    mapText.repeat.set(tiling.repeatX, tiling.repeatY)
+                  }
+                }
+
                 this.loadedTextures[mapKey][matKey] = mapText // keep texture in the class memory
               }
             }
@@ -97,12 +108,12 @@ export class StageObject{
         }
 
         for (let key in cloneMat) 
-          if(!key.includes('map') && !key.includes('type') && this.definition.MATERIALS[cloneMat.name][key] != undefined)
+          if(!key.includes('map') && !key.includes('Map')&& !key.includes('type') && this.definition.MATERIALS[cloneMat.name][key] != undefined)
             cloneMat[key] = this.definition.MATERIALS[cloneMat.name][key]
         
         this.needToBeUpdated.push( {mesh: child, clonedMaterial: cloneMat} )
 
-        if(STATE.WEBGL.isDebug) if(cloneMat.name == "lego.mat") console.log(cloneMat)
+        if(STATE.WEBGL.isDebug) if(cloneMat.name == "grass.material") console.log(cloneMat)
       }
     })
 
