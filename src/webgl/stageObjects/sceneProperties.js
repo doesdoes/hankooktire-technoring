@@ -84,8 +84,8 @@ export const MATERIALS = {
     "color": new THREE.Color("rgb(255,255,255)"),
     "map": "Concrete_s.jpg",
     "mapTiling": { 
-      "repeatX": 5,
-      "repeatY": 5,
+      "repeatX": 0.1,
+      "repeatY": 0.1,
     },
   },
   "white.material": {
@@ -182,5 +182,96 @@ export const MATERIALS = {
       "repeatX": 1,
       "repeatY": 1,
     },
+  },
+  "roadDarkGray.material": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "TexturesCom_Asphalt.jpg",
+    "mapTiling": { 
+      "repeatX": 1,
+      "repeatY": 1,
+    },
+  },
+  "bigRock.material": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "TexturesCom_BrickRound0043_1_seamless_S.jpg",
+    "mapTiling": { 
+      "repeatX": 1,
+      "repeatY": 1,
+    },
+  },
+  "tree.material": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "tree_s.png",
+    "alphaMap": "tree_s_Opacity.png",
+    "transparent": true
+  },
+  "water.material": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(154,210,255)"),
+    "opacity": 0.5,
+    "transparent": true
+  },
+  "woodBumper.material": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "Wood_s.jpg",
+    "mapTiling": { 
+      "repeatX": 1,
+      "repeatY": 1,
+    },
+  },
+  //building materials
+  "buildingGrid.material": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "Buildings_grid_s.jpg",
+    "mapTiling": { 
+      "repeatX": 10,
+      "repeatY": 10,
+    },
+  },
+  "buildingRoof2.material": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "Buildings_roof2_s.jpg",
+    "mapTiling": { 
+      "repeatX": 1,
+      "repeatY": 1,
+    },
+  },
+  "buildingRoof.material": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "Buildings_roof_s.jpg",
+    "mapTiling": { 
+      "repeatX": 10,
+      "repeatY": 10,
+    },
+  },
+  "metalColumn.material": {
+    "type": new THREE.MeshPhysicalMaterial(),
+    "color": new THREE.Color("rgb(132,132,132)"),
+  },
+  "tower.material": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "TexturesCom_Concrete_BrickWall_1K_albedo.jpg",
+    "mapTiling": { 
+      "repeatX": 30,
+      "repeatY": 30,
+    },
+  },
+  "buildingWindow.material": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(213,233,236)"),
+    "transparent": true,
+    "opacity": 0.8,
+  },
+  "windowFrame.material": {
+    "type": new THREE.MeshPhysicalMaterial(),
+    "color": new THREE.Color("rgb(0,0,0)"),
   },
 } 
