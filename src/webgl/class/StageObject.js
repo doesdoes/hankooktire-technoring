@@ -108,12 +108,12 @@ export class StageObject{
         }
 
         for (let key in cloneMat) 
-          if(!key.includes('map') && !key.includes('Map')&& !key.includes('type') && this.definition.MATERIALS[cloneMat.name][key] != undefined)
+          if(!(key in this.loadedTextures) && !key.includes('type') && this.definition.MATERIALS[cloneMat.name][key] != undefined)
             cloneMat[key] = this.definition.MATERIALS[cloneMat.name][key]
         
         this.needToBeUpdated.push( {mesh: child, clonedMaterial: cloneMat} )
 
-        if(STATE.WEBGL.isDebug) if(cloneMat.name == "buildingWindow.material") console.log(cloneMat)
+        if(STATE.WEBGL.isDebug) if(cloneMat.name == "grass.material") console.log(cloneMat)
       }
     })
 

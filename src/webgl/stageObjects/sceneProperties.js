@@ -13,8 +13,8 @@ export const MATERIALS = {
     "color": new THREE.Color("rgb(255,255,255)"),
     "map": "Asphalt_s.jpg",
     "mapTiling": { 
-      "repeatX": 10,
-      "repeatY": 10,
+      "repeatX": 30,
+      "repeatY": 30,
     },
   },
   "asphaltDark.material": {
@@ -33,6 +33,15 @@ export const MATERIALS = {
     "mapTiling": { 
       "repeatX": 1,
       "repeatY": 1,
+    },
+  },
+  "asphaltLight2.material": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "Asphalt_ligth_s.jpg",
+    "mapTiling": { 
+      "repeatX": 30,
+      "repeatY": 30,
     },
   },
   "concrete.material": {
@@ -96,13 +105,6 @@ export const MATERIALS = {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(15,15,15)"),
   },
-  "treeOutside.material": { //TO FIX
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "tree_s.png",
-    "alphaMap": "tree_s_Opacity.png",
-    "transparent": true
-  },
   "bumper2.material": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(255,255,255)"),
@@ -135,9 +137,10 @@ export const MATERIALS = {
     "color": new THREE.Color("rgb(255,255,255)"),
     "map": "Grass.jpg",
     "aoMap": "occ_grass_map.jpg",
+    "aoMapIntensity": 1.5,
     "mapTiling": { 
-      "repeatX": 25,
-      "repeatY": 25,
+      "repeatX": 30,
+      "repeatY": 30,
     },
     "flipY": false
   },
@@ -157,8 +160,8 @@ export const MATERIALS = {
     "color": new THREE.Color("rgb(255,255,255)"),
     "map": "TexturesCom_SoilMud0006_1_seamless_S.jpg",
     "mapTiling": { 
-      "repeatX": 30,
-      "repeatY": 30,
+      "repeatX": 40,
+      "repeatY": 40,
     },
   },
   "Inside_line_s": {
@@ -206,7 +209,8 @@ export const MATERIALS = {
     "color": new THREE.Color("rgb(255,255,255)"),
     "map": "tree_s.png",
     "alphaMap": "tree_s_Opacity.png",
-    "transparent": true
+    "transparent": true,
+    "flipY": false
   },
   "water.material": {
     "type": new THREE.MeshPhongMaterial(),
@@ -273,5 +277,10 @@ export const MATERIALS = {
   "windowFrame.material": {
     "type": new THREE.MeshPhysicalMaterial(),
     "color": new THREE.Color("rgb(0,0,0)"),
+  },
+  "road2.material": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "road02.png",
   },
 } 

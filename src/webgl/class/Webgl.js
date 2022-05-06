@@ -39,7 +39,8 @@ export class Webgl{
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
   	this.renderer.setPixelRatio(this.pixelRatio)
   	this.renderer.setSize(this.canvasWidth, this.canvasHeight)
-  	this.renderer.shadowMap.enabled = false
+  	this.renderer.shadowMap.enabled = true
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
     this.renderer.outputEncoding = THREE.LinearEncoding
     this.container.appendChild(this.renderer.domElement)
 
