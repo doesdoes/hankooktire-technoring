@@ -1,6 +1,7 @@
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import CameraControls from 'camera-controls'
 
+CameraControls.install( { THREE: THREE } )
 
 export class Webgl{
   constructor(_options){
@@ -45,15 +46,35 @@ export class Webgl{
     this.container.appendChild(this.renderer.domElement)
 
     //controls
-    this.controls = new OrbitControls( this.camera, this.renderer.domElement )
-    this.controls.enabled = true
-    this.controls.enableRotate = true
-    this.controls.enablePan = true
-    this.controls.enableDamping = true
-    this.controls.minDistance = 1
-    this.controls.maxDistance = 50
-    this.controls.minPolarAngle = THREE.MathUtils.degToRad(40)
-    this.controls.maxPolarAngle = THREE.MathUtils.degToRad(80)
+    this.cameraControls = new CameraControls( this.camera, this.renderer.domElement )
+    this.cameraControls.minDistance = 100
+    this.cameraControls.maxDistance = 100
+    this.cameraControls.truckSpeed = 0
+    this.cameraControls.mouseButtons.wheel = CameraControls.ACTION.NONE
+
+    this.userDragging = false
+    this.disableAutoRotate = false
+
+    const onRest = () => {
+      this.cameraControls.removeEventListener('rest', onRest )
+      this.userDragging = false
+      this.disableAutoRotate = false
+    }
+    this.cameraControls.addEventListener('controlstart', () => {
+      this.cameraControls.removeEventListener( 'rest', onRest )
+      this.userDragging = true
+      this.disableAutoRotate = true
+    })
+    this.cameraControls.addEventListener('controlend', () => {
+      if ( this.cameraControls.active ) {
+        this.cameraControls.addEventListener( 'rest', onRest )
+      } else { onRest() }
+    })
+    this.cameraControls.addEventListener('transitionstart', () => {
+      if ( this.userDragging ) return
+      this.disableAutoRotate = true
+      this.cameraControls.addEventListener( 'rest', onRest )
+    })
 
     //listeners
 	  window.addEventListener('resize', this.onWindowResize.bind(this), false)

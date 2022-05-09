@@ -19,6 +19,9 @@ export function loadStage( sceneName ) {
       directionalLight.shadow.mapSize.height = 4096
       directionalLight.castShadow = true
 
+      console.log(directionalLight)
+      
+
       STATE.WEBGL.scene.add( directionalLight )
 
       // const drHelper = new THREE.DirectionalLightHelper( directionalLight, 1, '#0324fc' )

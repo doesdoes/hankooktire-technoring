@@ -53,6 +53,10 @@ window._WEBGL = (function() {
           console.log( STATE.WEBGL.scene )
         }
         if ( event.key == 'r' ) STATE.ENABLE_RENDERING ? toggleRendering( false ) : toggleRendering( true )
+
+        if ( event.key == '`' ) focusOnRegion('reset')
+        if ( event.key == '1' ) focusOnRegion('zone1')
+        if ( event.key == '2' ) focusOnRegion('zone2')
       }, false)
     }
 
@@ -125,14 +129,30 @@ window._WEBGL = (function() {
     STATE.ENABLE_RENDERING = _toggle
   }
 
+  const clock = new THREE.Clock()
   function render( time ){
     requestAnimationFrame( render )
 
     if( !STATE.ENABLE_RENDERING ) return
 
-    STATE.WEBGL.controls.update()
+    //STATE.WEBGL.controls.update()
+    STATE.WEBGL.cameraControls.normalizeRotations()
+    STATE.WEBGL.cameraControls.update( clock.getDelta() )
+
     TWEEN.update( time )
     STATE.WEBGL.renderer.render( STATE.WEBGL.scene, STATE.WEBGL.camera )
+  }
+
+  function focusOnRegion( _region ){    
+    STATE.WEBGL.cameraControls.setLookAt( 
+      STATE.ZONE_FOCUS[_region].position.x,
+      STATE.ZONE_FOCUS[_region].position.y,
+      STATE.ZONE_FOCUS[_region].position.z,
+      STATE.ZONE_FOCUS[_region].target.x,
+      STATE.ZONE_FOCUS[_region].target.y,
+      STATE.ZONE_FOCUS[_region].target.z,
+      true 
+    )
   }
 
   return {
