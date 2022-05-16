@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
 import { StageObject } from './class/StageObject.js'
 import { STATE, ASSETS } from './global.js'
 
@@ -49,8 +50,37 @@ export function loadStage( sceneName ) {
       })      
       
       STATE.WEBGL.scene.add(SCENE_OBJECT.clone)
+
+      // POI buttons
+      const POI = new CSS2DObject( document.getElementById('highSpeedCircuit') )
+      POI.position.set( 70, 0, -15 )
+      SCENE_OBJECT.clone.add( POI )
+
+      POI.element.addEventListener('click', function(){
+        focusOnRegion('zone1')
+      })
+
+      // map button
+      document.getElementById('map-button').addEventListener('click', function(){
+        focusOnRegion('reset')
+      })
+
       break
   }
+}
+
+export function focusOnRegion( _region ){    
+  STATE.WEBGL.cameraControls.setLookAt( 
+    STATE.ZONE_FOCUS[_region].position.x,
+    STATE.ZONE_FOCUS[_region].position.y,
+    STATE.ZONE_FOCUS[_region].position.z,
+    STATE.ZONE_FOCUS[_region].target.x,
+    STATE.ZONE_FOCUS[_region].target.y,
+    STATE.ZONE_FOCUS[_region].target.z,
+    true 
+  ).then(() => {
+    console.log('transition end')
+  })
 }
 
 export function toggleStages( toggle, sceneName ) {

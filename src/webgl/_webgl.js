@@ -34,12 +34,10 @@ window._WEBGL = (function() {
     STATE.WEBGL = new Webgl({
       parentContainerClass: _parentContainerClass,
       container: document.getElementById(_containerId),
-      sceneOptions: { backgroundColor: 0xffffff },
-      cameraOptions: { fov: 45, near: 0.1, far: 400, x: 1, y: 10, z: 10 },
+      sceneOptions: { backgroundColor: 0xBDC6D8 },
+      cameraOptions: { fov: 45, near: 1, far: 1000, x: 0, y: 15, z: 20 },
       isDebug: _debug
     })
-
-    //INTERACTIONS.registerEvents() //enable to register mouse events
 
     //start webgl render loop
     render()
@@ -54,9 +52,9 @@ window._WEBGL = (function() {
         }
         if ( event.key == 'r' ) STATE.ENABLE_RENDERING ? toggleRendering( false ) : toggleRendering( true )
 
-        if ( event.key == '`' ) focusOnRegion('reset')
-        if ( event.key == '1' ) focusOnRegion('zone1')
-        if ( event.key == '2' ) focusOnRegion('zone2')
+        if ( event.key == '`' ) SCENE.focusOnRegion('reset')
+        if ( event.key == '1' ) SCENE.focusOnRegion('zone1')
+        if ( event.key == '2' ) SCENE.focusOnRegion('zone2')
       }, false)
     }
 
@@ -141,18 +139,7 @@ window._WEBGL = (function() {
 
     TWEEN.update( time )
     STATE.WEBGL.renderer.render( STATE.WEBGL.scene, STATE.WEBGL.camera )
-  }
-
-  function focusOnRegion( _region ){    
-    STATE.WEBGL.cameraControls.setLookAt( 
-      STATE.ZONE_FOCUS[_region].position.x,
-      STATE.ZONE_FOCUS[_region].position.y,
-      STATE.ZONE_FOCUS[_region].position.z,
-      STATE.ZONE_FOCUS[_region].target.x,
-      STATE.ZONE_FOCUS[_region].target.y,
-      STATE.ZONE_FOCUS[_region].target.z,
-      true 
-    )
+    STATE.WEBGL.labelRenderer.render( STATE.WEBGL.scene, STATE.WEBGL.camera )
   }
 
   return {

@@ -8,279 +8,224 @@ export const PROPERTIES = {
 }
 
 export const MATERIALS = {
-  "asphalt.material": {
+  "bg": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Asphalt_s.jpg",
-    "mapTiling": { 
-      "repeatX": 30,
-      "repeatY": 30,
-    },
+    "map": "bg.png",
+    "alphaMap": "bg_alpha.png",
+    "transparent": true,
   },
-  "asphaltDark.material": {
+  "cloud": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Asphalt_dark_s.jpg",
-    "mapTiling": { 
-      "repeatX": 10,
-      "repeatY": 10,
-    },
+    "map": "cloud.png",
+    "transparent": true,
+    "opacity": 0.3,
+    "depthWrite": false,
   },
-  "asphaltLight.material": {
+  "Bush": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "TexturesCom_Asphalt.jpg",
-    "mapTiling": { 
-      "repeatX": 1,
-      "repeatY": 1,
-    },
+    "map": "Bush.jpg",
   },
-  "asphaltLight2.material": {
+  "road01": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Asphalt_ligth_s.jpg",
-    "mapTiling": { 
-      "repeatX": 30,
-      "repeatY": 30,
-    },
-  },
-  "concrete.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Concrete_s.jpg",
-    "mapTiling": { 
-      "repeatX": 10,
-      "repeatY": 10,
-    },
-  },
-  "buildingGrass.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "UnderG_grass_light__s.jpg",
-    "mapTiling": { 
-      "repeatX": 10,
-      "repeatY": 10,
-    },
-  },
-  "bustStopBase.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-  },
-  "busStopRoof.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Buildings_grid_s.jpg",
+    "map": "road01.png",
     "mapTiling": { 
       "repeatX": 1,
-      "repeatY": 1,
+      "repeatY": 50,
+    },
+  },
+  "road02": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "road02.png",
+    "mapTiling": { 
+      "repeatX": 1,
+      "repeatY": 100,
+    },
+  },
+  "Road Lines": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+  },
+  "Asphalt": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "Asphalt.jpg",
+    "mapTiling": { 
+      "repeatX": 20,
+      "repeatY": 20,
+    },
+  },
+  "Asphalt_dark": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "Asphalt_dark.jpg",
+    "mapTiling": { 
+      "repeatX": 20,
+      "repeatY": 20,
+    },
+  },
+  "Asphalt_light": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "Asphalt_light.jpg",
+    "mapTiling": { 
+      "repeatX": 20,
+      "repeatY": 20,
+    },
+  },
+  "Material_30": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(98,98,98)"),
+  },
+  "Building_bake": {
+    "type": new THREE.MeshBasicMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "Building_bake.jpg",
+  },
+  "concreat_offroad": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "concreat_offroad.jpg",
+    "mapTiling": { 
+      "repeatX": 20,
+      "repeatY": 20,
     },
   },
   "gate.Material": {
     "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(51,51,51)"),
+    "color": new THREE.Color("rgb(86,86,86)"),
   },
-  "concreteOutside.material": {
+  "Grass_bake": {
+    "type": new THREE.MeshBasicMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "Grass_bake.jpg",
+  },
+  "Material_31": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(197,197,197)"),
+  },
+  "mud bumper": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Concrete_s.jpg",
+    "map": "mud bumper.jpg",
     "mapTiling": { 
       "repeatX": 5,
       "repeatY": 5,
     },
   },
-  "outsideGrass.material": {
+  "sand bumper": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Concrete_s.jpg",
+    "map": "sand bumper.jpg",
     "mapTiling": { 
-      "repeatX": 0.1,
-      "repeatY": 0.1,
+      "repeatX": 5,
+      "repeatY": 5,
     },
   },
-  "white.material": {
+  "offroad grass": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "offroad grass.jpg",
+    "mapTiling": { 
+      "repeatX": 5,
+      "repeatY": 5,
+    },
+  },
+  "outside_concreate": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "outside_concreate.png",
+  },
+  "offroad grass": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "offroad grass.jpg",
+    "mapTiling": { 
+      "repeatX": 5,
+      "repeatY": 5,
+    },
+  },
+  "outside_con2": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(127,127,127)"),
+  },
+  "pebble bumper": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "pebble bumper.jpg",
+    "mapTiling": { 
+      "repeatX": 5,
+      "repeatY": 5,
+    },
+  },
+  "sand ground": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "sand ground.jpg",
+    "mapTiling": { 
+      "repeatX": 5,
+      "repeatY": 5,
+    },
+  },
+  "stone bumper": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "stone bumper.jpg",
+    "mapTiling": { 
+      "repeatX": 5,
+      "repeatY": 5,
+    },
   },
   "technoringText.material": {
     "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(15,15,15)"),
+    "color": new THREE.Color("rgb(25,25,25)"),
   },
-  "bumper2.material": {
+  "tree": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "TexturesCom_SoilMud0011_1_seamless_S.jpg",
+    "map": "tree.jpg",
+  },
+  "tree base": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(95,81,77)"),
+  },
+  "road03": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(255,255,255)"),
+    "map": "road03.jpg",
     "mapTiling": { 
       "repeatX": 1,
-      "repeatY": 1,
+      "repeatY": 50,
     },
   },
-  "bumper.material": {
+  "water": {
+    "type": new THREE.MeshBasicMaterial(),
+    "color": new THREE.Color("rgb(202,233,254)"),
+  },
+  "white_road": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "TexturesCom_Asphalt.jpg",
+    "map": "white_road.jpg",
     "mapTiling": { 
-      "repeatX": 1,
-      "repeatY": 1,
+      "repeatX": 20,
+      "repeatY": 20,
     },
-  },
-  "dirt.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "TexturesCom_Ground_MudCracked.jpg",
-    "mapTiling": { 
-      "repeatX": 1,
-      "repeatY": 1,
-    },
-  },
-  "grass.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Grass.jpg",
-    "aoMap": "occ_grass_map.jpg",
-    "aoMapIntensity": 1.5,
-    "mapTiling": { 
-      "repeatX": 30,
-      "repeatY": 30,
-    },
-    "flipY": false
-  },
-  "grassInner.material": { //could be merged with grass.material
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Grass.jpg",
-    "aoMap": "occ_grass_map.jpg",
-    "mapTiling": { 
-      "repeatX": 25,
-      "repeatY": 25,
-    },
-    "flipY": false
-  },
-  "rock.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "TexturesCom_SoilMud0006_1_seamless_S.jpg",
-    "mapTiling": { 
-      "repeatX": 40,
-      "repeatY": 40,
-    },
-  },
-  "Inside_line_s": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-  },
-  "insideLine2.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "road01.png",
-  },
-  "line3.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(32,32,32)"),
-  },
-  "grassBorder.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "OffRoad_Grass2.jpg",
-    "mapTiling": { 
-      "repeatX": 1,
-      "repeatY": 1,
-    },
-  },
-  "roadDarkGray.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "TexturesCom_Asphalt.jpg",
-    "mapTiling": { 
-      "repeatX": 1,
-      "repeatY": 1,
-    },
-  },
-  "bigRock.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "TexturesCom_BrickRound0043_1_seamless_S.jpg",
-    "mapTiling": { 
-      "repeatX": 1,
-      "repeatY": 1,
-    },
-  },
-  "tree.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "tree_s.png",
-    "alphaMap": "tree_s_Opacity.png",
-    "transparent": true,
-    "flipY": false
-  },
-  "water.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(154,210,255)"),
-    "opacity": 0.5,
-    "transparent": true
-  },
-  "woodBumper.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Wood_s.jpg",
-    "mapTiling": { 
-      "repeatX": 1,
-      "repeatY": 1,
-    },
-  },
-  //building materials
-  "buildingGrid.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Buildings_grid_s.jpg",
-    "mapTiling": { 
-      "repeatX": 10,
-      "repeatY": 10,
-    },
-  },
-  "buildingRoof2.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Buildings_roof2_s.jpg",
-    "mapTiling": { 
-      "repeatX": 1,
-      "repeatY": 1,
-    },
-  },
-  "buildingRoof.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "Buildings_roof_s.jpg",
-    "mapTiling": { 
-      "repeatX": 10,
-      "repeatY": 10,
-    },
-  },
-  "metalColumn.material": {
-    "type": new THREE.MeshPhysicalMaterial(),
-    "color": new THREE.Color("rgb(132,132,132)"),
-  },
-  "tower.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "TexturesCom_Concrete_BrickWall_1K_albedo.jpg",
-    "mapTiling": { 
-      "repeatX": 30,
-      "repeatY": 30,
-    },
-  },
-  "buildingWindow.material": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(213,233,236)"),
-    "transparent": true,
-    "opacity": 0.8,
   },
   "windowFrame.material": {
-    "type": new THREE.MeshPhysicalMaterial(),
-    "color": new THREE.Color("rgb(0,0,0)"),
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(61,61,61)"),
   },
-  "road2.material": {
+  "wood bumper": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "road02.png",
+    "map": "wood bumper.jpg",
+    "mapTiling": { 
+      "repeatX": 1,
+      "repeatY": 1,
+    },
   },
 } 

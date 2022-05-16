@@ -10,7 +10,7 @@ export const STATE = {
   ENABLE_RENDERING: false,
   ZONE_FOCUS:{
     reset: {
-      position: new THREE.Vector3(1,10,10),
+      position: new THREE.Vector3(0,15,20),
       target: new THREE.Vector3(0,0,0),
     },
     zone1: {

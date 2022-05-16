@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
 import CameraControls from 'camera-controls'
 
 CameraControls.install( { THREE: THREE } )
@@ -45,6 +46,15 @@ export class Webgl{
     this.renderer.outputEncoding = THREE.LinearEncoding
     this.container.appendChild(this.renderer.domElement)
 
+    //css renderer
+    this.labelRenderer = new CSS2DRenderer()
+    this.labelRenderer.setSize( this.canvasWidth, this.canvasHeight )
+    this.labelRenderer.domElement.style.position = 'absolute'
+    this.labelRenderer.domElement.style.top = '0px'
+    this.labelRenderer.domElement.style.pointerEvents = 'none'
+    document.body.appendChild( this.labelRenderer.domElement )
+
+
     //controls
     this.cameraControls = new CameraControls( this.camera, this.renderer.domElement )
     this.cameraControls.minDistance = 100
@@ -88,5 +98,6 @@ export class Webgl{
   	this.camera.updateProjectionMatrix()
 
     this.renderer.setSize(newWidth, newHeight)
+    this.labelRenderer.setSize(newWidth, newHeight)
   }
 }
