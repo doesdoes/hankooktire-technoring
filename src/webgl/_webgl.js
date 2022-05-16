@@ -34,8 +34,8 @@ window._WEBGL = (function() {
     STATE.WEBGL = new Webgl({
       parentContainerClass: _parentContainerClass,
       container: document.getElementById(_containerId),
-      sceneOptions: { backgroundColor: 0xBDC6D8 },
-      cameraOptions: { fov: 45, near: 1, far: 1000, x: 0, y: 15, z: 20 },
+      sceneOptions: { backgroundColor: 0xd1e4f0 },
+      cameraOptions: { fov: 45, near: 1, far: 1000, x: 5, y: 12, z: 17 },
       isDebug: _debug
     })
 
@@ -133,7 +133,16 @@ window._WEBGL = (function() {
 
     if( !STATE.ENABLE_RENDERING ) return
 
-    //STATE.WEBGL.controls.update()
+    // uv animations
+    if (STATE.UV_ANIMATED_OBJECTS) {
+      for (const key in STATE.UV_ANIMATED_OBJECTS) {
+        STATE.UV_ANIMATED_OBJECTS[key].animate()
+      }
+    }
+
+    // if ( !STATE.WEBGL.disableAutoRotate )
+    //   STATE.WEBGL.cameraControls.azimuthAngle += 1 * clock.getDelta() * THREE.MathUtils.DEG2RAD
+
     STATE.WEBGL.cameraControls.normalizeRotations()
     STATE.WEBGL.cameraControls.update( clock.getDelta() )
 

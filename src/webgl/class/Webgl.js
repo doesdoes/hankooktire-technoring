@@ -25,6 +25,12 @@ export class Webgl{
     this.scene = new THREE.Scene()
     if (this.sceneOptions.backgroundColor != undefined)
       this.scene.background = new THREE.Color(this.sceneOptions.backgroundColor)
+
+    //fog
+    // const color = 0xBDC6D8
+    // const near = 50
+    // const far = 90
+    // this.scene.fog = new THREE.Fog(color, near, far)
     
     //camera
     this.camera = new THREE.PerspectiveCamera(

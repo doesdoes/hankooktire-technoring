@@ -9,19 +9,23 @@ export const PROPERTIES = {
 
 export const MATERIALS = {
   "bg": {
-    "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
-    "map": "bg.png",
+    "type": new THREE.MeshBasicMaterial(),
+    "color": new THREE.Color("rgb(200,200,200)"),
+    "map": "bg.jpg",
     "alphaMap": "bg_alpha.png",
     "transparent": true,
   },
   "cloud": {
-    "type": new THREE.MeshPhongMaterial(),
+    "type": new THREE.MeshBasicMaterial(),
     "color": new THREE.Color("rgb(255,255,255)"),
     "map": "cloud.png",
     "transparent": true,
-    "opacity": 0.3,
+    "opacity": 0.15,
     "depthWrite": false,
+    "mapTiling": { 
+      "repeatX": 1,
+      "repeatY": 1,
+    },
   },
   "Bush": {
     "type": new THREE.MeshPhongMaterial(),
@@ -52,7 +56,7 @@ export const MATERIALS = {
   },
   "Asphalt": {
     "type": new THREE.MeshPhongMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
+    "color": new THREE.Color("rgb(230,230,230)"),
     "map": "Asphalt.jpg",
     "mapTiling": { 
       "repeatX": 20,
@@ -83,7 +87,7 @@ export const MATERIALS = {
   },
   "Building_bake": {
     "type": new THREE.MeshBasicMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
+    "color": new THREE.Color("rgb(230,230,230)"),
     "map": "Building_bake.jpg",
   },
   "concreat_offroad": {
@@ -101,7 +105,7 @@ export const MATERIALS = {
   },
   "Grass_bake": {
     "type": new THREE.MeshBasicMaterial(),
-    "color": new THREE.Color("rgb(255,255,255)"),
+    "color": new THREE.Color("rgb(235,235,235)"),
     "map": "Grass_bake.jpg",
   },
   "Material_31": {

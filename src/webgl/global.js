@@ -8,9 +8,17 @@ export const STATE = {
   },
   ENABLE_MOUSE_INTERACTION: false,
   ENABLE_RENDERING: false,
+  UV_ANIMATED_OBJECTS: {
+    clouds: {
+      mesh: null,
+      animate: function() { 
+        if(this.mesh.material.map != undefined) this.mesh.material.map.offset.x += 0.0001 
+      }
+    }
+  },
   ZONE_FOCUS:{
     reset: {
-      position: new THREE.Vector3(0,15,20),
+      position: new THREE.Vector3(5,12,17),
       target: new THREE.Vector3(0,0,0),
     },
     zone1: {

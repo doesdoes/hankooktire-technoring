@@ -18,10 +18,7 @@ export function loadStage( sceneName ) {
       directionalLight.shadow.camera.bottom = - d
       directionalLight.shadow.mapSize.width = 4096
       directionalLight.shadow.mapSize.height = 4096
-      directionalLight.castShadow = true
-
-      console.log(directionalLight)
-      
+      directionalLight.castShadow = true      
 
       STATE.WEBGL.scene.add( directionalLight )
 
@@ -29,7 +26,7 @@ export function loadStage( sceneName ) {
       // STATE.WEBGL.scene.add( drHelper )
 
       const hemisphereLight = new THREE.HemisphereLight( 0xffffff, 0x787878, 0.5 )
-      STATE.WEBGL.scene.add( hemisphereLight );
+      STATE.WEBGL.scene.add( hemisphereLight )
 
       // const hemiHelper = new THREE.HemisphereLightHelper( hemisphereLight, 0.5, '#0324fc' )
       // STATE.WEBGL.scene.add( hemiHelper )
@@ -47,23 +44,25 @@ export function loadStage( sceneName ) {
           child.receiveShadow = true
           child.castShadow = true
         }
+
+        if(child.name == 'Plane018') STATE.UV_ANIMATED_OBJECTS.clouds.mesh = child
       })      
       
       STATE.WEBGL.scene.add(SCENE_OBJECT.clone)
 
       // POI buttons
-      const POI = new CSS2DObject( document.getElementById('highSpeedCircuit') )
-      POI.position.set( 70, 0, -15 )
-      SCENE_OBJECT.clone.add( POI )
+      // const POI = new CSS2DObject( document.getElementById('highSpeedCircuit') )
+      // POI.position.set( 70, 0, -15 )
+      // SCENE_OBJECT.clone.add( POI )
 
-      POI.element.addEventListener('click', function(){
-        focusOnRegion('zone1')
-      })
+      // POI.element.addEventListener('click', function(){
+      //   focusOnRegion('zone1')
+      // })
 
-      // map button
-      document.getElementById('map-button').addEventListener('click', function(){
-        focusOnRegion('reset')
-      })
+      // // map button
+      // document.getElementById('map-button').addEventListener('click', function(){
+      //   focusOnRegion('reset')
+      // })
 
       break
   }
