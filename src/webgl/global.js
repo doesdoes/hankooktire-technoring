@@ -21,13 +21,25 @@ export const STATE = {
       position: new THREE.Vector3(5,12,17),
       target: new THREE.Vector3(0,0,0),
     },
-    zone1: {
+    highSpeedOval: {
       position: new THREE.Vector3(4.8,1,3),
-      target: new THREE.Vector3(4.8,0.5,0.25),
+      target: new THREE.Vector3(0,0,0),
     },
-    zone2: {
+    brakingLane: {
       position: new THREE.Vector3(-6,2,3),
-      target: new THREE.Vector3(-6,0.5,0.25),
+      target: new THREE.Vector3(0,0,0),
+    },
+    straightLane: {
+      position: new THREE.Vector3(-6,2,3),
+      target: new THREE.Vector3(0,0,0),
+    },
+    shortTrack: {
+      position: new THREE.Vector3(-6,2,3),
+      target: new THREE.Vector3(0,0,0),
+    },
+    longTrack: {
+      position: new THREE.Vector3(-6,2,3),
+      target: new THREE.Vector3(0,0,0),
     }
   }
 }

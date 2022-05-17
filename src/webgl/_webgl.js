@@ -52,9 +52,9 @@ window._WEBGL = (function() {
         }
         if ( event.key == 'r' ) STATE.ENABLE_RENDERING ? toggleRendering( false ) : toggleRendering( true )
 
-        if ( event.key == '`' ) SCENE.focusOnRegion('reset')
-        if ( event.key == '1' ) SCENE.focusOnRegion('zone1')
-        if ( event.key == '2' ) SCENE.focusOnRegion('zone2')
+        // if ( event.key == '`' ) SCENE.focusOnRegion('reset')
+        // if ( event.key == '1' ) SCENE.focusOnRegion('zone1')
+        // if ( event.key == '2' ) SCENE.focusOnRegion('zone2')
       }, false)
     }
 

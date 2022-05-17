@@ -31,6 +31,10 @@ export class Webgl{
     // const near = 50
     // const far = 90
     // this.scene.fog = new THREE.Fog(color, near, far)
+
+    const color = 0xffffff
+    const density = 0.01
+    this.scene.fog = new THREE.FogExp2(color, density)
     
     //camera
     this.camera = new THREE.PerspectiveCamera(
@@ -63,10 +67,13 @@ export class Webgl{
 
     //controls
     this.cameraControls = new CameraControls( this.camera, this.renderer.domElement )
-    this.cameraControls.minDistance = 100
-    this.cameraControls.maxDistance = 100
+    this.cameraControls.minDistance = 10
+    this.cameraControls.maxDistance = 30
+    this.cameraControls.minPolarAngle = THREE.MathUtils.degToRad(50)
+    this.cameraControls.maxPolarAngle = THREE.MathUtils.degToRad(70)
+
     this.cameraControls.truckSpeed = 0
-    this.cameraControls.mouseButtons.wheel = CameraControls.ACTION.NONE
+    //this.cameraControls.mouseButtons.wheel = CameraControls.ACTION.NONE
 
     this.userDragging = false
     this.disableAutoRotate = false

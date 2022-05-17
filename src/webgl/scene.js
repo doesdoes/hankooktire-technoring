@@ -8,7 +8,7 @@ import * as SCENE_PROPERTIES from './stageObjects/sceneProperties.js'
 export function loadStage( sceneName ) {
   switch (sceneName) {
     case 'main':
-      const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.8 )
+      const directionalLight = new THREE.DirectionalLight( 0xffffff, 1.0 )
       directionalLight.position.set(-5, 6, -3)
 
       let d = 10
@@ -16,8 +16,8 @@ export function loadStage( sceneName ) {
       directionalLight.shadow.camera.right = d
       directionalLight.shadow.camera.top = d
       directionalLight.shadow.camera.bottom = - d
-      directionalLight.shadow.mapSize.width = 4096
-      directionalLight.shadow.mapSize.height = 4096
+      directionalLight.shadow.mapSize.width = 2048
+      directionalLight.shadow.mapSize.height = 2048
       directionalLight.castShadow = true      
 
       STATE.WEBGL.scene.add( directionalLight )
@@ -25,7 +25,7 @@ export function loadStage( sceneName ) {
       // const drHelper = new THREE.DirectionalLightHelper( directionalLight, 1, '#0324fc' )
       // STATE.WEBGL.scene.add( drHelper )
 
-      const hemisphereLight = new THREE.HemisphereLight( 0xffffff, 0x787878, 0.5 )
+      const hemisphereLight = new THREE.HemisphereLight( 0xffffff, 0x787878, 0.3 )
       STATE.WEBGL.scene.add( hemisphereLight )
 
       // const hemiHelper = new THREE.HemisphereLightHelper( hemisphereLight, 0.5, '#0324fc' )
@@ -45,24 +45,35 @@ export function loadStage( sceneName ) {
           child.castShadow = true
         }
 
+        if (child.userData.type == 'POI') {          
+          // POI buttons
+          const POI = new CSS2DObject( document.getElementById(child.name) )
+          POI.position.copy(child.position)
+          SCENE_OBJECT.clone.add( POI )
+
+          child.getWorldPosition(STATE.ZONE_FOCUS[child.name].target)
+          child.getWorldPosition(STATE.ZONE_FOCUS[child.name].position)
+
+          STATE.ZONE_FOCUS[child.name].position.x += 4
+          STATE.ZONE_FOCUS[child.name].position.y += 4
+          STATE.ZONE_FOCUS[child.name].position.z += 4
+
+          POI.element.addEventListener('click', function(){
+            focusOnRegion(child.name)
+          })
+        }
+
         if(child.name == 'Plane018') STATE.UV_ANIMATED_OBJECTS.clouds.mesh = child
       })      
       
       STATE.WEBGL.scene.add(SCENE_OBJECT.clone)
 
-      // POI buttons
-      // const POI = new CSS2DObject( document.getElementById('highSpeedCircuit') )
-      // POI.position.set( 70, 0, -15 )
-      // SCENE_OBJECT.clone.add( POI )
+      
 
-      // POI.element.addEventListener('click', function(){
-      //   focusOnRegion('zone1')
-      // })
-
-      // // map button
-      // document.getElementById('map-button').addEventListener('click', function(){
-      //   focusOnRegion('reset')
-      // })
+      // map button
+      document.getElementById('map-button').addEventListener('click', function(){
+        focusOnRegion('reset')
+      })
 
       break
   }
