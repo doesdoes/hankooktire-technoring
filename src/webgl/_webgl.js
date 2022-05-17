@@ -142,7 +142,7 @@ window._WEBGL = (function() {
       }
     }
 
-    if ( !STATE.WEBGL.disableAutoRotate ){
+    if ( !STATE.WEBGL.disableAutoRotate && !STATE.IS_FOCUSED){
       STATE.WEBGL.cameraControls.azimuthAngle += autoRotateDirection * clock.getDelta() * THREE.MathUtils.DEG2RAD
 
       if (STATE.WEBGL.cameraControls.azimuthAngle > 0.5) autoRotateDirection = -1

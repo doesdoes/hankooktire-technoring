@@ -60,6 +60,7 @@ export function loadStage( sceneName ) {
 
           POI.element.addEventListener('click', function(){
             focusOnRegion(child.name)
+            STATE.IS_FOCUSED = true 
           })
         }
 
@@ -68,18 +69,17 @@ export function loadStage( sceneName ) {
       
       STATE.WEBGL.scene.add(SCENE_OBJECT.clone)
 
-      
-
       // map button
       document.getElementById('map-button').addEventListener('click', function(){
         focusOnRegion('reset')
+        STATE.IS_FOCUSED = false 
       })
 
       break
   }
 }
 
-export function focusOnRegion( _region ){    
+export function focusOnRegion( _region ){   
   STATE.WEBGL.cameraControls.setLookAt( 
     STATE.ZONE_FOCUS[_region].position.x,
     STATE.ZONE_FOCUS[_region].position.y,
