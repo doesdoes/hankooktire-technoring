@@ -128,6 +128,8 @@ window._WEBGL = (function() {
   }
 
   const clock = new THREE.Clock()
+  let autoRotateDirection = 1
+
   function render( time ){
     requestAnimationFrame( render )
 
@@ -140,8 +142,12 @@ window._WEBGL = (function() {
       }
     }
 
-    // if ( !STATE.WEBGL.disableAutoRotate )
-    //   STATE.WEBGL.cameraControls.azimuthAngle += 1 * clock.getDelta() * THREE.MathUtils.DEG2RAD
+    if ( !STATE.WEBGL.disableAutoRotate ){
+      STATE.WEBGL.cameraControls.azimuthAngle += autoRotateDirection * clock.getDelta() * THREE.MathUtils.DEG2RAD
+
+      if (STATE.WEBGL.cameraControls.azimuthAngle > 0.5) autoRotateDirection = -1
+      if (STATE.WEBGL.cameraControls.azimuthAngle < 0.1) autoRotateDirection = 1      
+    }
 
     STATE.WEBGL.cameraControls.normalizeRotations()
     STATE.WEBGL.cameraControls.update( clock.getDelta() )
