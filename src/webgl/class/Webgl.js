@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import { STATE } from '../global.js'
 import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
 import CameraControls from 'camera-controls'
 
@@ -99,8 +100,23 @@ export class Webgl{
       this.cameraControls.addEventListener( 'rest', onRest )
     })
 
+    this.resizeCameraView(this.canvasWidth)
+
     //listeners
 	  window.addEventListener('resize', this.onWindowResize.bind(this), false)
+  }
+
+  resizeCameraView(_width){
+    if (_width < 750){
+      if(!STATE.IS_FOCUSED) this.cameraControls.setPosition(12,30,35)
+      STATE.ZONE_FOCUS.reset.position.set(11,25,30)
+    }else if (_width < 1200){
+      if(!STATE.IS_FOCUSED) this.cameraControls.setPosition(9,23,28)
+      STATE.ZONE_FOCUS.reset.position.set(11,21,26)
+    }else{
+      if(!STATE.IS_FOCUSED) this.cameraControls.setPosition(5,12,17)
+      STATE.ZONE_FOCUS.reset.position.set(5,12,17)
+    }
   }
 
   onWindowResize(){
@@ -108,6 +124,9 @@ export class Webgl{
     let newHeight = document.querySelector(this.parentContainerClass).offsetHeight
 
     this.camera.aspect = newWidth / newHeight
+
+    this.resizeCameraView(newWidth)
+    
   	this.camera.updateProjectionMatrix()
 
     this.renderer.setSize(newWidth, newHeight)

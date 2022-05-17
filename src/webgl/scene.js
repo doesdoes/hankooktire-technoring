@@ -89,7 +89,9 @@ export function focusOnRegion( _region ){
     STATE.ZONE_FOCUS[_region].target.z,
     true 
   ).then(() => {
-    console.log('transition end')
+    if(STATE.IS_FOCUSED){
+      console.log('open popup')
+    }
   })
 }
 

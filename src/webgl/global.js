@@ -19,7 +19,7 @@ export const STATE = {
   IS_FOCUSED: false,
   ZONE_FOCUS:{
     reset: {
-      position: new THREE.Vector3(5,12,17),
+      position: new THREE.Vector3(0,0,0),
       target: new THREE.Vector3(0,0,0),
     },
     highSpeedOval: {
