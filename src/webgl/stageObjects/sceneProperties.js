@@ -106,7 +106,9 @@ export const MATERIALS = {
   "Grass_bake": {
     "type": new THREE.MeshBasicMaterial(),
     "color": new THREE.Color("rgb(235,235,235)"),
-    "map": "Grass_bake.jpg",
+    "aoMap": "occ_grass_map.jpg",
+    "aoMapIntensity": 1,
+    //"map": "Grass_bake.jpg",
   },
   "Material_31": {
     "type": new THREE.MeshPhongMaterial(),
@@ -208,7 +210,9 @@ export const MATERIALS = {
   },
   "water": {
     "type": new THREE.MeshBasicMaterial(),
-    "color": new THREE.Color("rgb(202,233,254)"),
+    "color": new THREE.Color("rgb(164,175,183)"),
+    "transparent": true,
+    "opacity": 0.3,
   },
   "white_road": {
     "type": new THREE.MeshPhongMaterial(),
