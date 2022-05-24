@@ -103,12 +103,12 @@ export const MATERIALS = {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(86,86,86)"),
   },
-  "Grass_bake": {
-    "type": new THREE.MeshBasicMaterial(),
+  "Grass": {
+    "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(235,235,235)"),
+    "map": "Grass_bake.jpg",
     "aoMap": "occ_grass_map.jpg",
-    "aoMapIntensity": 1,
-    //"map": "Grass_bake.jpg",
+    "aoMapIntensity": 1.5,
   },
   "Material_31": {
     "type": new THREE.MeshPhongMaterial(),
