@@ -11,9 +11,9 @@ export const STATE = {
   UV_ANIMATED_OBJECTS: {
     clouds: {
       mesh: null,
-      animate: function() { 
-        if(this.mesh.material.map != undefined) this.mesh.material.map.offset.x += 0.0001 
-      }
+      // animate: function() { 
+      //   if(this.mesh.material.map != undefined) this.mesh.material.map.offset.x += 0.0001 
+      // }
     }
   },
   IS_FOCUSED: false,
@@ -22,11 +22,11 @@ export const STATE = {
       position: new THREE.Vector3(0,0,0),
       target: new THREE.Vector3(0,0,0),
     },
-    highSpeedOval: {
+    funcPoint1: {
       position: new THREE.Vector3(4.8,1,3),
       target: new THREE.Vector3(0,0,0),
     },
-    brakingLane: {
+    funcPoint2: {
       position: new THREE.Vector3(-6,2,3),
       target: new THREE.Vector3(0,0,0),
     },
@@ -51,7 +51,7 @@ export const ASSETS = {
       {
         name: 'scene',
         loaded: false,
-        path : 'glb/scene.glb',
+        path : 'glb/scene-tank-2.glb',
         asset: null
       }
     ],

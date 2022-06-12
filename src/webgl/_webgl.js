@@ -136,11 +136,11 @@ window._WEBGL = (function() {
     if( !STATE.ENABLE_RENDERING ) return
 
     // uv animations
-    if (STATE.UV_ANIMATED_OBJECTS) {
-      for (const key in STATE.UV_ANIMATED_OBJECTS) {
-        STATE.UV_ANIMATED_OBJECTS[key].animate()
-      }
-    }
+    // if (STATE.UV_ANIMATED_OBJECTS) {
+    //   for (const key in STATE.UV_ANIMATED_OBJECTS) {
+    //     STATE.UV_ANIMATED_OBJECTS[key].animate()
+    //   }
+    // }
 
     if( !STATE.WEBGL.disableAutoRotate && !STATE.IS_FOCUSED){
       if (STATE.WEBGL.cameraControls.azimuthAngle > 0.5) autoRotateDirection = -1

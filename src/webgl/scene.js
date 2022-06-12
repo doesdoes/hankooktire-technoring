@@ -45,7 +45,8 @@ export function loadStage( sceneName ) {
           child.castShadow = true
         }
 
-        if (child.userData.type == 'POI') {          
+        if (child.userData.type == 'POI') {   
+          console.log(child.name)
           // POI buttons
           const POI = new CSS2DObject( document.getElementById(child.name) )
           POI.position.copy(child.position)
