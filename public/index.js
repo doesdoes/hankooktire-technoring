@@ -15,3 +15,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     _WEBGL.toggleRendering(true)
   })
 })
+
+window.addEventListener('UICustomEvent', function(e) {
+  console.log(e.detail.msg);
+})
