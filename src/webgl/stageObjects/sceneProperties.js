@@ -113,7 +113,7 @@ export const MATERIALS = {
   "Material #352": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(235,235,235)"),
-    "map": "Grass_bake_flip.png",
+    "map": "Grass_bake.jpg",
     "aoMap": "occ_grass_map.jpg",
     "aoMapIntensity": 1.5,
     "flipY": true,
