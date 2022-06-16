@@ -80,6 +80,14 @@ export function loadStage( sceneName ) {
         STATE.IS_FOCUSED = false 
       })
 
+      window.addEventListener('UICustomEvent', function(e) {
+        if(e.detail.msg === 'reset') {
+          console.log('== close popup ==')
+          focusOnRegion('reset')
+          STATE.IS_FOCUSED = false 
+        }
+      })
+
       break
   }
 }
