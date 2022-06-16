@@ -41,7 +41,23 @@ export const STATE = {
     longTrack: {
       position: new THREE.Vector3(-6,2,3),
       target: new THREE.Vector3(0,0,0),
-    }
+    },
+    obstacleLane: {
+      position: new THREE.Vector3(-6,2,3),
+      target: new THREE.Vector3(0,0,0),
+    },
+    chipCutRoad: {
+      position: new THREE.Vector3(-6,2,3),
+      target: new THREE.Vector3(0,0,0),
+    },
+    connectLane: {
+      position: new THREE.Vector3(-6,2,3),
+      target: new THREE.Vector3(0,0,0),
+    },
+    officeControlTower: {
+      position: new THREE.Vector3(-6,2,3),
+      target: new THREE.Vector3(0,0,0),
+    },
   }
 }
 
@@ -53,7 +69,7 @@ export const ASSETS = {
         loaded: false,
         // path : 'glb/scene.glb',
         // path : 'glb/technoring.glb',
-        path : 'glb/technoring-editing-1.glb',
+        path : 'glb/technoring-editing-2.glb',
         asset: null
       }
     ],
