@@ -5,7 +5,7 @@ import { STATE, ASSETS } from './global.js'
 
 import * as SCENE_PROPERTIES from './stageObjects/sceneProperties.js'
 
-import { sendUICustomEvent } from './class/UICustomEvent.js'
+import { sendGLCustomEvent } from './class/GLCustomEvent.js'
 
 export function loadStage( sceneName ) {
   switch (sceneName) {
@@ -75,7 +75,7 @@ export function loadStage( sceneName ) {
       document.getElementById('map-button').addEventListener('click', function(){
         
         console.log('== close popup ==')
-        sendUICustomEvent('reset');
+        sendGLCustomEvent('reset');
         focusOnRegion('reset')
         STATE.IS_FOCUSED = false 
       })
@@ -85,6 +85,9 @@ export function loadStage( sceneName ) {
           console.log('== close popup ==')
           focusOnRegion('reset')
           STATE.IS_FOCUSED = false 
+        } else {
+          focusOnRegion(e.detail.msg)
+          STATE.IS_FOCUSED = true
         }
       })
 
@@ -104,7 +107,7 @@ export function focusOnRegion( _region ){
   ).then(() => {
     if(STATE.IS_FOCUSED){
       console.log('== open popup ==')
-      sendUICustomEvent(_region);
+      sendGLCustomEvent(_region);
     }
   })
 }
