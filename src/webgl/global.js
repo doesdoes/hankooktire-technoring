@@ -51,7 +51,9 @@ export const ASSETS = {
       {
         name: 'scene',
         loaded: false,
-        path : 'glb/scene.glb',
+        // path : 'glb/scene.glb',
+        // path : 'glb/technoring.glb',
+        path : 'glb/technoring-editing-1.glb',
         asset: null
       }
     ],

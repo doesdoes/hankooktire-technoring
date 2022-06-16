@@ -110,6 +110,14 @@ export const MATERIALS = {
     "aoMap": "occ_grass_map.jpg",
     "aoMapIntensity": 1.5,
   },
+  "Material #352": {
+    "type": new THREE.MeshPhongMaterial(),
+    "color": new THREE.Color("rgb(235,235,235)"),
+    "map": "Grass_bake_flip.png",
+    "aoMap": "occ_grass_map.jpg",
+    "aoMapIntensity": 1.5,
+    "flipY": true,
+  },
   "Material_31": {
     "type": new THREE.MeshPhongMaterial(),
     "color": new THREE.Color("rgb(197,197,197)"),
