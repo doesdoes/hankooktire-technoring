@@ -36,7 +36,7 @@ window._WEBGL = (function() {
       parentContainerClass: _parentContainerClass,
       container: document.getElementById(_containerId),
       sceneOptions: { backgroundColor: 0xd1e4f0 },
-      cameraOptions: { fov: 45, near: 1, far: 1000, x: 5, y: 12, z: 17 },
+      cameraOptions: { fov: 45, near: 1, far: 1000, x: 5, y: 5, z: 17 },
       isDebug: _debug
     })
 

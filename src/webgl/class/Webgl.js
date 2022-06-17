@@ -69,9 +69,9 @@ export class Webgl{
     //controls
     this.cameraControls = new CameraControls( this.camera, this.renderer.domElement )
     this.cameraControls.minDistance = 10
-    this.cameraControls.maxDistance = 30
+    this.cameraControls.maxDistance = 40
     this.cameraControls.minPolarAngle = THREE.MathUtils.degToRad(50)
-    this.cameraControls.maxPolarAngle = THREE.MathUtils.degToRad(70)
+    this.cameraControls.maxPolarAngle = THREE.MathUtils.degToRad(85)
 
     this.cameraControls.truckSpeed = 0
     //this.cameraControls.mouseButtons.wheel = CameraControls.ACTION.NONE
