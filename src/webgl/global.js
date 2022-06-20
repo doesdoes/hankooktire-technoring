@@ -26,31 +26,39 @@ export const STATE = {
       position: new THREE.Vector3(4.8,1,3),
       target: new THREE.Vector3(0,0,0),
     },
-    brakingLane: {
+    vehicleDynamicsArea: {
       position: new THREE.Vector3(-6,2,3),
       target: new THREE.Vector3(0,0,0),
     },
-    straightLane: {
+    dryHandlingCircuit: {
       position: new THREE.Vector3(-6,2,3),
       target: new THREE.Vector3(0,0,0),
     },
-    shortTrack: {
+    wetHandlingCircuit: {
       position: new THREE.Vector3(-6,2,3),
       target: new THREE.Vector3(0,0,0),
     },
-    longTrack: {
+    rideTracks: {
       position: new THREE.Vector3(-6,2,3),
       target: new THREE.Vector3(0,0,0),
     },
-    obstacleLane: {
+    braking: {
       position: new THREE.Vector3(-6,2,3),
       target: new THREE.Vector3(0,0,0),
     },
-    chipCutRoad: {
+    passByNoise: {
       position: new THREE.Vector3(-6,2,3),
       target: new THREE.Vector3(0,0,0),
     },
-    connectLane: {
+    generalRoad: {
+      position: new THREE.Vector3(-6,2,3),
+      target: new THREE.Vector3(0,0,0),
+    },
+    offRoad: {
+      position: new THREE.Vector3(-6,2,3),
+      target: new THREE.Vector3(0,0,0),
+    },
+    gravelRoad: {
       position: new THREE.Vector3(-6,2,3),
       target: new THREE.Vector3(0,0,0),
     },
