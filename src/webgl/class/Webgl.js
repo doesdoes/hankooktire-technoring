@@ -69,7 +69,7 @@ export class Webgl{
     //controls
     this.cameraControls = new CameraControls( this.camera, this.renderer.domElement )
     this.cameraControls.minDistance = 10
-    this.cameraControls.maxDistance = 22
+    this.cameraControls.maxDistance = this.canvasWidth < 750 ? 41 : 22
     this.cameraControls.minPolarAngle = THREE.MathUtils.degToRad(50)
     this.cameraControls.maxPolarAngle = THREE.MathUtils.degToRad(70)
 
@@ -108,7 +108,7 @@ export class Webgl{
 
   resizeCameraView(_width){
     if (_width < 750){
-      if(!STATE.IS_FOCUSED) this.cameraControls.setPosition(12,30,35)
+      if(!STATE.IS_FOCUSED) this.cameraControls.setPosition(11,25,30)
       STATE.ZONE_FOCUS.reset.position.set(11,25,30)
     }else if (_width < 1200){
       if(!STATE.IS_FOCUSED) this.cameraControls.setPosition(9,23,28)
