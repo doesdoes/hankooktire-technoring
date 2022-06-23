@@ -69,7 +69,7 @@ export class Webgl{
     //controls
     this.cameraControls = new CameraControls( this.camera, this.renderer.domElement )
     this.cameraControls.minDistance = 10
-    this.cameraControls.maxDistance = this.canvasWidth < 750 ? 41 : 22
+    this.cameraControls.maxDistance = this.canvasWidth < 750 ? 41 : 20
     this.cameraControls.minPolarAngle = THREE.MathUtils.degToRad(50)
     this.cameraControls.maxPolarAngle = THREE.MathUtils.degToRad(70)
 

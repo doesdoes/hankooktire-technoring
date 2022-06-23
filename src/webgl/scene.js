@@ -90,7 +90,21 @@ export function loadStage( sceneName ) {
   }
 }
 
-export function focusOnRegion( _region ){   
+export function focusOnRegion( _region ){
+
+  switch (_region) {
+    case 'officeControlTower':
+      STATE.WEBGL.cameraControls.minDistance = 2
+      break;
+    case 'reset': 
+      STATE.WEBGL.cameraControls.minDistance = 10
+      break;
+  
+    default:
+      STATE.WEBGL.cameraControls.minDistance = 5
+      break;
+  }
+
   STATE.WEBGL.cameraControls.setLookAt( 
     STATE.ZONE_FOCUS[_region].position.x,
     STATE.ZONE_FOCUS[_region].position.y,

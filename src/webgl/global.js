@@ -47,7 +47,7 @@ export const STATE = {
       target: new THREE.Vector3(0,0,0),
     },
     passByNoise: {
-      position: new THREE.Vector3(4.9,0.63,-0.4),
+      position: new THREE.Vector3(4.9,1.0,-0.4),
       target: new THREE.Vector3(0,0,0),
     },
     generalRoad: {
