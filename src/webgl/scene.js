@@ -53,12 +53,7 @@ export function loadStage( sceneName ) {
           POI.position.copy(child.position)
           SCENE_OBJECT.clone.add( POI )
 
-          child.getWorldPosition(STATE.ZONE_FOCUS[child.name].target)
-          child.getWorldPosition(STATE.ZONE_FOCUS[child.name].position)
-
-          STATE.ZONE_FOCUS[child.name].position.x += 4
-          STATE.ZONE_FOCUS[child.name].position.y += 4
-          STATE.ZONE_FOCUS[child.name].position.z += 4
+          child.getWorldPosition(STATE.ZONE_FOCUS[child.name].target)          
 
           POI.element.addEventListener('click', function(){
             focusOnRegion(child.name)
