@@ -47,7 +47,7 @@ export function loadStage( sceneName ) {
           child.castShadow = true
         }
 
-        if (child.userData.type == 'POI') {          
+        if (child.userData.type == 'POI') {
           // POI buttons
           const POI = new CSS2DObject( document.getElementById(child.name) )
           POI.position.copy(child.position)
@@ -70,7 +70,7 @@ export function loadStage( sceneName ) {
       document.getElementById('map-button').addEventListener('click', function(){
         
         console.log('== close popup ==')
-        sendGLCustomEvent('reset');
+        sendGLCustomEvent({msg: 'reset'});
         focusOnRegion('reset')
         STATE.IS_FOCUSED = false 
       })
@@ -84,6 +84,11 @@ export function loadStage( sceneName ) {
           focusOnRegion(e.detail.msg)
           STATE.IS_FOCUSED = true
         }
+      })
+
+      STATE.WEBGL.cameraControls.addEventListener('control', function() {
+        const d = STATE.WEBGL.camera.position.distanceTo(new THREE.Vector3(0, 0, 0))
+        sendGLCustomEvent({distance: d});
       })
 
       break
@@ -116,7 +121,7 @@ export function focusOnRegion( _region ){
   ).then(() => {
     if(STATE.IS_FOCUSED){
       console.log('== open popup ==')
-      sendGLCustomEvent(_region);
+      sendGLCustomEvent({msg: _region});
     }
   })
 }
